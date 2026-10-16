@@ -1,6 +1,8 @@
 // The front page of a dated archive (dress-up-pictures or dress-up-music):
 // every day in it, newest first, each with the game version it recorded
-// (from the day's source.json, written by archive-today.sh).
+// (from the day's source.json, written by archive-today.sh). Also days.json,
+// the same list as data, for pages that show the newest day (the Dress Up
+// pages under matthewhammer.org/hazel/dress-up/).
 //   node days_index.mjs <archive root> <title> <intro html>
 import { readdirSync, existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -22,4 +24,5 @@ writeFileSync(join(root, "index.html"), `<!doctype html><meta charset="utf-8"><m
   days.map(({ k, src }) => `<li><a href="${k}/index.html">${k}</a>` + (src.version ? ` <small>· Messed Up Dress Up ${esc(src.version)}` +
     (src.commit ? ` (<a href="https://github.com/matthewhammer/kids-choice-games/commit/${esc(src.commit)}">${esc(src.commit.slice(0, 7))}</a>)` : "") + `</small>` : "") + `</li>`).join("") +
   `</ul>`);
+writeFileSync(join(root, "days.json"), JSON.stringify(days.map(({ k, src }) => ({ day: k, version: src.version ?? null, commit: src.commit ?? null, made_at: src.made_at ?? null })), null, 1) + "\n");
 console.log(days.length, "days listed in", join(root, "index.html"));

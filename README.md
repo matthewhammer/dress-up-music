@@ -4,6 +4,6 @@ An archive of the music in [Messed Up Dress Up](http://matthewhammer.org/kids-ch
 
 **A tune unchanged since an earlier day is a relative symlink to that day's recording.** A tune counts as unchanged when its fingerprint matches: its notes, sections, tempo and levels, the code of every instrument it uses, and the player's and mixer's code. The day's page plays the real file.
 
-Listen at **http://matthewhammer.org/dress-up-music/**. The pictures have their own archive, made the same way: [dress-up-pictures](https://github.com/matthewhammer/dress-up-pictures).
+Listen at **http://matthewhammer.org/dress-up-music/** (every day), or in the [player](http://matthewhammer.org/hazel/dress-up/music.html). `days.json` lists the days, newest first, for the player. The pictures have their own archive, made the same way: [dress-up-pictures](https://github.com/matthewhammer/dress-up-pictures).
 
 This repository exists only to keep every past version of the game's music, for looking back. It is expected to reach GitHub's storage limits before the game does; if it does, it can move to other storage. The tools that make it (`music.mjs`, `days_index.mjs`, `archive-today.sh`) are in `tools/`.
