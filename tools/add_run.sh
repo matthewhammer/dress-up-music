@@ -7,7 +7,12 @@
 # The same script serves dress-up-pictures (pictures/) and dress-up-music
 # (music/): tools/site.json names the folder. Light work: no browser, no
 # ffmpeg, one rsync and one commit (this laptop crashes under load).
+# (ticket 277) After the commit, what the run added to git (the thin pack a
+# push of it sends) goes into its runs.json entry, amended in before the push.
+# (ticket 276) The archive workflow runs this too, on GitHub, in a fresh clone
+# whose origin carries its token: the same checks, the same commit.
 #   tools/add_run.sh <the artifact's folder>   (gh run download <id> -R matthewhammer/kids-choice-games -n <name> -D <folder>)
+#   (ADD_RUN_SCRATCH: where to unpack it; ~/du-shots by default)
 set -euo pipefail
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 IN=$(cd "$1" && pwd)
@@ -27,7 +32,7 @@ for m in tarfile.open(tar):
     elif m.isfile() and m.size == 0: bad.append("empty: " + m.name)
 if bad: print("\n".join(bad[:20])); sys.exit(1)
 PY
-SCR=$(mktemp -d "$HOME/du-shots/incoming-XXXXXX")
+mkdir -p "${ADD_RUN_SCRATCH:-$HOME/du-shots}"; SCR=$(mktemp -d "${ADD_RUN_SCRATCH:-$HOME/du-shots}/incoming-XXXXXX")
 tar -C "$SCR" -xf "$IN/run.tar"
 for f in manifest.json source.json index.html; do [ -s "$SCR/$FOLDER/$f" ] || { echo "the run has no $f"; exit 1; }; done
 nice -n 10 rsync -a --delete "$SCR/$FOLDER/" "$ROOT/$FOLDER/"
@@ -35,8 +40,15 @@ node "$ROOT/tools/runs_index.mjs" "$ROOT" "$RUN"
 V=$(node -p 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).version' "$ROOT/$FOLDER/source.json")
 git -C "$ROOT" add -A "$FOLDER" runs.json index.html
 echo "$RUN: $(git -C "$ROOT" diff --cached --shortstat)"
-git -C "$ROOT" -c user.email=matthew.hammer@gmail.com commit -q -m "$RUN: Messed Up Dress Up $V"
+WHO=(-c user.name="Matthew Hammer" -c user.email=matthew.hammer@gmail.com)
+MSG="$RUN: Messed Up Dress Up $V"; [ -n "${GITHUB_RUN_ID:-}" ] && MSG="$MSG
+
+Added by matthewhammer/kids-choice-games run $GITHUB_RUN_ID (ticket 276)."
+git -C "$ROOT" "${WHO[@]}" commit -q -m "$MSG"
+ADDED=$(printf '%s\n^%s\n' HEAD HEAD^ | git -C "$ROOT" pack-objects --revs --thin --stdout -q | wc -c)
+node "$ROOT/tools/runs_index.mjs" "$ROOT" "$RUN" --added "$ADDED" > /dev/null
+git -C "$ROOT" add runs.json index.html && git -C "$ROOT" "${WHO[@]}" commit -q --amend --no-edit
 git -C "$ROOT" tag "$TAG"
 git -C "$ROOT" push -q origin main "refs/tags/$TAG"
 rm -rf "$SCR"
-echo "added $RUN ($V) as $TAG, pushed"
+echo "added $RUN ($V) as $TAG, $(( ADDED / 1024 )) KiB in git, pushed"

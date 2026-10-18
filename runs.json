@@ -6,7 +6,8 @@
   "version": "0.0.201",
   "commit": "61e2efbd0fba5d2f600f75aac6b8c2507d6e5066",
   "made_at": "2026-10-18T08:40:59-06:00",
-  "made_on": "GitHub Actions, Chrome/155.0.8059.39 (matthewhammer/kids-choice-games run 39137062653, ticket 272)"
+  "made_on": "GitHub Actions, Chrome/155.0.8059.39 (matthewhammer/kids-choice-games run 39137062653, ticket 272)",
+  "added_bytes": 1452892
  },
  {
   "run": "2026/10/15",
@@ -15,6 +16,7 @@
   "version": "0.0.42",
   "commit": "20dee4fe3a73d41aa28e4b7a197ce6352318a8f2",
   "made_at": "2026-10-15T16:05:12-06:00",
-  "made_on": null
+  "made_on": null,
+  "added_bytes": 63601341
  }
 ]
