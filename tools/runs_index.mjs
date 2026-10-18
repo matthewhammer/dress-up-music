@@ -34,7 +34,7 @@ const size = r => r.added_bytes != null ? ` <small>· added ${mib(r.added_bytes)
 const total = runs.reduce((t, r) => t + (r.added_bytes ?? 0), 0), counted = runs.filter(r => r.added_bytes != null).length;
 const game = r => r.version ? ` <small>· Messed Up Dress Up ${esc(r.version)}` +
   (r.commit ? ` (<a href="https://github.com/matthewhammer/kids-choice-games/commit/${esc(r.commit)}">${esc(r.commit.slice(0, 7))}</a>)` : "") + `</small>` : "";
-writeFileSync(join(root, "index.html"), `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title>
+writeFileSync(join(root, "index.html"), `<!doctype html><meta charset="utf-8"><!-- nav: begin --><script src="https://matthewhammer.org/nav/nav.js"></script><!-- nav: end --><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title>
 <style>body{font-family:sans-serif;margin:16px;max-width:820px;background:#faf8f3;color:#222} li{margin:8px 0} small{color:#777}</style>
 <h1>${esc(title)}</h1><p>${intro}</p>` + (counted ? `<p><small>What the runs added to git: ${mib(total)} for ${counted} of ${runs.length} runs (each, the thin pack a push of it sends: its files as differences from the run before).</small></p>` : "") + `<ul>` +
   runs.map((r, i) => `<li>` + (i === 0 ? `<a href="${esc(folder)}/index.html">${esc(r.run)}</a> <small>(the newest)</small>` : `<a href="${esc(viewer)}?run=${encodeURIComponent(r.run)}">${esc(r.run)}</a>`) +

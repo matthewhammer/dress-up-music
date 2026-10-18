@@ -4,7 +4,7 @@
 //   import { musicPage } from "./music_page.mjs"; musicPage(tunes, source, run)
 import { when, tagOf } from "./runs.mjs";
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
-const pageOf = (title, intro, rows) => `<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title>
+const pageOf = (title, intro, rows) => `<!doctype html><meta charset="utf-8"><!-- nav: begin --><script src="https://matthewhammer.org/nav/nav.js"></script><!-- nav: end --><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(title)}</title>
 <style>body{font-family:sans-serif;margin:16px;max-width:820px;background:#faf8f3;color:#222} li{margin:10px 0;list-style:none} audio{width:100%;max-width:520px;display:block;margin-top:4px} small{color:#777} ul{padding:0}</style>
 <h1>${esc(title)}</h1><p>${intro}</p><ul>${rows}</ul>\n`;
 export function musicPage(tunes, source, run, { release = false } = {}) {
