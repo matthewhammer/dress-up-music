@@ -1,0 +1,7 @@
+{
+ "folder": "music",
+ "repo": "matthewhammer/dress-up-music",
+ "title": "Messed Up Dress Up: every tune, run by run",
+ "intro": "Every tune in <a href=\"https://matthewhammer.org/kids-choice-games/dress-up/\">Messed Up Dress Up</a>, at each run of the archive: at its default settings, one loop each, as an MP3. There is one copy of each tune, <code>music/&lt;tune&gt;.mp3</code>: a run records only the tunes that changed, and every run writes the same paths, so only the newest is on this site. Each earlier run is a git tag, which <a href=\"https://matthewhammer.org/hazel/dress-up/music.html\">the music player</a> reads. 🖼️ <a href=\"https://matthewhammer.org/dress-up-pictures/\">The pictures</a>.",
+ "viewer": "https://matthewhammer.org/hazel/dress-up/music.html"
+}

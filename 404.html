@@ -1,0 +1,8 @@
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Not in the music archive</title>
+<script>
+// (until 2026-10-18 this archive kept a folder per day, YYYY/MM/DD/; that day is now a run, played by the music player)
+const m = location.pathname.match(/^\/dress-up-music\/([0-9]{4}\/[0-9]{2}\/[0-9]{2}(\/[0-9]{2}-[0-9]{2})?)\//);
+if (m) location.replace("/hazel/dress-up/music.html?run=" + encodeURIComponent(m[1]));
+</script>
+<style>body{font-family:sans-serif;margin:16px;max-width:820px;background:#faf8f3;color:#222}</style>
+<p>Nothing here. <a href="/dress-up-music/">Every run of the music archive</a>, or <a href="/hazel/dress-up/music.html">the music player</a>.</p>
