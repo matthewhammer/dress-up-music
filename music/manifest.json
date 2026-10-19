@@ -43,17 +43,33 @@
   "id": "steppers",
   "name": "🐢 turtle steppers dub",
   "loopSecs": 155.68,
-  "fingerprint": "df2490ff48a68259",
+  "fingerprint": "cf06699756c42091",
   "file": "steppers.mp3",
-  "recordedIn": "2026/10/15"
+  "recordedIn": "2026/10/18/21-36"
  },
  {
   "id": "superdub",
   "name": "🔥 turtle super-dub step",
   "loopSecs": 75.29,
-  "fingerprint": "a718a566cb7c10c0",
+  "fingerprint": "a08430fea44452f8",
   "file": "superdub.mp3",
-  "recordedIn": "2026/10/18"
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "deepdub",
+  "name": "🌊 turtle deep-dub",
+  "loopSecs": 102.86,
+  "fingerprint": "8df83c32c3e31034",
+  "file": "deepdub.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "bubbledub",
+  "name": "🫧 bubble super-dub step",
+  "loopSecs": 99.31,
+  "fingerprint": "905ede11128d9f37",
+  "file": "bubbledub.mp3",
+  "recordedIn": "2026/10/18/21-36"
  },
  {
   "id": "lullaby",
@@ -110,6 +126,78 @@
   "fingerprint": "a547076f7f7f1769",
   "file": "witchfunkE.mp3",
   "recordedIn": "2026/10/15"
+ },
+ {
+  "id": "steppersA",
+  "name": "🐢 turtle steppers dub A: triplet shuffle, fast",
+  "loopSecs": 76.8,
+  "fingerprint": "3d0cb11ec0c59878",
+  "file": "steppersA.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "steppersB",
+  "name": "🐢 turtle steppers dub B: one-drop",
+  "loopSecs": 137.14,
+  "fingerprint": "b62b2ea2f5cc02e4",
+  "file": "steppersB.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "steppersC",
+  "name": "🐢 turtle steppers dub C: rockers, three against four",
+  "loopSecs": 130.91,
+  "fingerprint": "9d47c2c52dfff503",
+  "file": "steppersC.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "steppersD",
+  "name": "🐢 turtle steppers dub D: a drum break",
+  "loopSecs": 125.22,
+  "fingerprint": "35d71ea4c4334d42",
+  "file": "steppersD.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "cushionsA",
+  "name": "🛋️ couch-cushion rave A: triplet shuffle",
+  "loopSecs": 102.3,
+  "fingerprint": "5ac5f90cd60ec40a",
+  "file": "cushionsA.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "cushionsB",
+  "name": "🛋️ couch-cushion rave B: three against four",
+  "loopSecs": 104,
+  "fingerprint": "62d72e5c74a0a95a",
+  "file": "cushionsB.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "cushionsC",
+  "name": "🛋️ couch-cushion rave C: a drum solo",
+  "loopSecs": 100.65,
+  "fingerprint": "389695468ce74ca0",
+  "file": "cushionsC.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "cushionsD",
+  "name": "🛋️ couch-cushion rave D: breakbeat",
+  "loopSecs": 99.05,
+  "fingerprint": "dad5c87ebe2652b8",
+  "file": "cushionsD.mp3",
+  "recordedIn": "2026/10/18/21-36"
+ },
+ {
+  "id": "cushionsE",
+  "name": "🛋️ couch-cushion rave E: half-time, triplet fills",
+  "loopSecs": 97.5,
+  "fingerprint": "a0f9a8fc8081e01a",
+  "file": "cushionsE.mp3",
+  "recordedIn": "2026/10/18/21-36"
  },
  {
   "id": "castlewaltz",
