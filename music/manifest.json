@@ -232,6 +232,14 @@
   "recordedIn": "2026/10/15"
  },
  {
+  "id": "batsremix",
+  "name": "🦇 bat-wing boogie remix",
+  "loopSecs": 66.59,
+  "fingerprint": "bf72cb9aa667929c",
+  "file": "batsremix.mp3",
+  "recordedIn": "2026/10/18/23-14"
+ },
+ {
   "id": "treechase",
   "name": "🌳 tree-house chase",
   "loopSecs": 122.18,
